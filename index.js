@@ -11,13 +11,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 const calculator = require('./calculator');
 
 app.get('/', (req, res) => res.render('calculator', {
-  title: 'Nodejs Calculator',
+  title: 'Demo Calculator',
 }))
 
 app.post('/calculate', (req, res) => {
   const { operand1, operator, operand2 } = req.body;
   res.render('calculator', {
-    title: 'Nodejs Calculator',
+    title: 'Demo Calculator',
     result: calculator[operator](operand1, operand2),
     operand1,
     operand2,
