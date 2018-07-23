@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Calculator App</title>
+</head>
+
+<body>
+  <h1>{{title}}</h1>
+  <form action="calculate" method="POST">
+    Operand 1:
+    <input name="operand1" type="number" step="any" required="required" value="{{operand1}}" />
+    <br/> Operator
+    <select name="operator">
+      <option id="option-add" value="add">+</option>
+      <option id="option-sub" value="sub">-</option>
+      <option id="option-mul" value="mul">x</option>
+      <option id="option-div" value="div">:</option>
+    </select>
+    <br/> Operand 2:
+    <input name="operand2" type="number" step="any" required="required" value="{{operand2}}" />
+    <br/>
+    <input type="submit" value="Calculate" />
+    <br/> Result: {{result}}
+  </form>
+
+  <script>
+    document.getElementById("option-{{operator}}").selected = true;
+  </script>
+</body>
+
+</html>
